@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Holy Vision Global School, Babuan - nurturing minds, building futures.">
+  <title>Holy Vision Global School | Babuan</title>
+  <style>
+    :root{
+      --maroon:#741426; --maroon-dark:#4d0c19; --gold:#c99232;
+      --cream:#fffaf3; --ink:#1b1b1b; --muted:#666; --white:#fff;
+      --shadow:0 16px 45px rgba(77,12,25,.12);
+    }
+    *{box-sizing:border-box;margin:0;padding:0}
+    html{scroll-behavior:smooth}
+    body{font-family:Inter,Segoe UI,Arial,sans-serif;color:var(--ink);background:#fff;line-height:1.6}
+    a{text-decoration:none;color:inherit}
+    .container{width:min(1120px,92%);margin:auto}
+    .topbar{background:var(--maroon-dark);color:#fff;font-size:13px;padding:8px 0}
+    .topbar .container{display:flex;justify-content:space-between;gap:15px}
+    header{position:sticky;top:0;z-index:50;background:rgba(255,255,255,.96);backdrop-filter:blur(10px);border-bottom:1px solid #eee}
+    nav{height:76px;display:flex;align-items:center;justify-content:space-between}
+    .brand{display:flex;align-items:center;gap:12px}
+    .crest{width:48px;height:48px;border-radius:14px;background:linear-gradient(135deg,var(--maroon),var(--gold));display:grid;place-items:center;color:#fff;font-weight:800;font-size:21px}
+    .brand strong{display:block;font-size:19px;letter-spacing:.2px}
+    .brand span{display:block;color:var(--maroon);font-size:11px;font-weight:700;letter-spacing:2px}
+    .navlinks{display:flex;gap:26px;align-items:center;font-size:14px;font-weight:600}
+    .navlinks a:hover{color:var(--maroon)}
+    .menu{display:none;border:0;background:none;font-size:27px}
+    .btn{display:inline-flex;align-items:center;justify-content:center;padding:12px 20px;border-radius:8px;font-weight:700;border:1px solid transparent;transition:.2s}
+    .btn-primary{background:var(--maroon);color:#fff}
+    .btn-primary:hover{background:var(--maroon-dark);transform:translateY(-1px)}
+    .btn-light{background:#fff;color:var(--maroon);border-color:#ead8b6}
+    .hero{background:
+      radial-gradient(circle at 90% 10%,rgba(201,146,50,.25),transparent 28%),
+      linear-gradient(135deg,#fffaf3 0%,#fff 52%,#f8eee8 100%);
+      padding:86px 0 70px;overflow:hidden}
+    .hero-grid{display:grid;grid-template-columns:1.05fr .95fr;gap:55px;align-items:center}
+    .eyebrow{display:inline-block;background:#f6ead6;color:var(--maroon);padding:6px 12px;border-radius:30px;font-size:12px;font-weight:800;letter-spacing:1.4px;margin-bottom:18px}
+    h1{font-size:clamp(42px,6vw,68px);line-height:1.03;letter-spacing:-2px;margin-bottom:20px}
+    h1 em{color:var(--maroon);font-style:normal}
+    .hero p{font-size:18px;color:var(--muted);max-width:610px;margin-bottom:28px}
+    .hero-actions{display:flex;gap:12px;flex-wrap:wrap}
+    .hero-card{background:#fff;border:1px solid #eee;border-radius:22px;padding:18px;box-shadow:var(--shadow);transform:rotate(1.2deg)}
+    .hero-photo{height:430px;border-radius:16px;background:
+      linear-gradient(120deg,rgba(77,12,25,.7),rgba(201,146,50,.15)),
+      url('https://images.unsplash.com/photo-1509062522246-3755977927d7?auto=format&fit=crop&w=1200&q=85') center/cover}
+    .floating{display:flex;gap:12px;flex-wrap:wrap;margin-top:-55px;position:relative;padding:0 25px}
+    .stat{background:#fff;border-radius:14px;padding:14px 18px;box-shadow:0 10px 30px rgba(0,0,0,.09);min-width:145px}
+    .stat b{display:block;color:var(--maroon);font-size:21px}.stat small{color:#777}
+    section{padding:82px 0}
+    .section-head{text-align:center;max-width:700px;margin:0 auto 42px}
+    .section-head .eyebrow{margin-bottom:10px}
+    h2{font-size:clamp(30px,4vw,44px);line-height:1.1;margin-bottom:12px}
+    .section-head p{color:var(--muted)}
+    .about{background:var(--cream)}
+    .about-grid{display:grid;grid-template-columns:.9fr 1.1fr;gap:50px;align-items:center}
+    .about-box{background:var(--maroon);color:#fff;border-radius:22px;padding:38px;min-height:310px;display:flex;flex-direction:column;justify-content:center}
+    .about-box .big{font-size:70px;font-weight:900;line-height:1;color:#f0c66c}
+    .about-copy p{color:var(--muted);margin:12px 0 20px}
+    .cards{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+    .card{padding:27px;border:1px solid #eee;border-radius:17px;background:#fff;box-shadow:0 8px 28px rgba(0,0,0,.05)}
+    .icon{width:50px;height:50px;border-radius:13px;background:#f8ead5;color:var(--maroon);display:grid;place-items:center;font-size:22px;margin-bottom:16px}
+    .card h3{margin-bottom:7px}.card p{color:var(--muted);font-size:14px}
+    .why{background:#faf7f2}
+    .why-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:18px}
+    .why-item{text-align:center;padding:25px 14px}.why-item b{display:block;margin:10px 0 5px}.why-item span{color:var(--muted);font-size:13px}
+    .cta{background:linear-gradient(120deg,var(--maroon-dark),var(--maroon));color:#fff}
+    .cta .container{display:flex;align-items:center;justify-content:space-between;gap:30px}
+    .cta p{color:#f3dfe2;margin-top:7px}
+    .contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:25px}
+    .contact-card{padding:28px;border:1px solid #eee;border-radius:18px}
+    form{display:grid;gap:12px}
+    input,textarea{width:100%;padding:13px 14px;border:1px solid #ddd;border-radius:8px;font:inherit}
+    textarea{min-height:120px;resize:vertical}
+    footer{background:#25070d;color:#fff;padding:28px 0}
+    footer .container{display:flex;justify-content:space-between;gap:20px;align-items:center}
+    footer small{color:#d8c6c9}
+    .softx{color:#f0c66c}
+    @media(max-width:850px){
+      .navlinks{display:none;position:absolute;top:76px;left:0;right:0;background:#fff;padding:18px 4%;flex-direction:column;align-items:flex-start;border-bottom:1px solid #eee}
+      .navlinks.open{display:flex}.menu{display:block}
+      .hero-grid,.about-grid,.contact-grid{grid-template-columns:1fr}
+      .hero{padding-top:55px}.hero-photo{height:330px}
+      .cards{grid-template-columns:1fr 1fr}.why-grid{grid-template-columns:1fr 1fr}
+      .cta .container{flex-direction:column;align-items:flex-start}
+    }
+    @media(max-width:560px){
+      .topbar .container{flex-direction:column;gap:0}
+      .brand strong{font-size:16px}.cards,.why-grid{grid-template-columns:1fr}
+      section{padding:62px 0}.floating{margin-top:-30px;padding:0 10px}
+      .stat{min-width:125px}.hero-card{transform:none}
+      footer .container{flex-direction:column;align-items:flex-start}
+    }
+  </style>
+</head>
+<body>
+  <div class="topbar"><div class="container"><span>Welcome to Holy Vision Global School, Babuan</span><span>Learning • Values • Excellence</span></div></div>
+
+  <header>
+    <nav class="container">
+      <a class="brand" href="#home" aria-label="Holy Vision Global School home">
+        <div class="crest">HV</div>
+        <div><strong>HOLY VISION GLOBAL SCHOOL</strong><span>BABUAN</span></div>
+      </a>
+      <button class="menu" onclick="document.querySelector('.navlinks').classList.toggle('open')" aria-label="Open menu">☰</button>
+      <div class="navlinks">
+        <a href="#about">About</a><a href="#academics">Academics</a><a href="#facilities">Facilities</a>
+        <a href="#gallery">Gallery</a><a href="#contact">Contact</a><a class="btn btn-primary" href="#contact">Admission Enquiry</a>
+      </div>
+    </nav>
+  </header>
+
+  <main id="home">
+    <section class="hero">
+      <div class="container hero-grid">
+        <div>
+          <div class="eyebrow">WELCOME TO OUR SCHOOL</div>
+          <h1>Nurturing Minds.<br><em>Building Futures.</em></h1>
+          <p>A modern learning environment where knowledge, character, creativity and confidence come together to help every learner move towards a brighter tomorrow.</p>
+          <div class="hero-actions">
+            <a class="btn btn-primary" href="#contact">Admission Enquiry →</a>
+            <a class="btn btn-light" href="#about">Explore School</a>
+          </div>
+        </div>
+        <div>
+          <div class="hero-card"><div class="hero-photo" role="img" aria-label="Students learning in a classroom"></div></div>
+          <div class="floating">
+            <div class="stat"><b>Holistic</b><small>Learning approach</small></div>
+            <div class="stat"><b>Future Ready</b><small>Skills & confidence</small></div>
+            <div class="stat"><b>Values First</b><small>Character building</small></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="about" class="about">
+      <div class="container about-grid">
+        <div class="about-box"><div class="big">HV</div><h2>Where every learner matters.</h2><p>Creating an encouraging space for curiosity, discipline, creativity and responsible citizenship.</p></div>
+        <div class="about-copy"><div class="eyebrow">ABOUT THE SCHOOL</div><h2>Education with purpose and values.</h2><p>Holy Vision Global School, Babuan is presented here with a clean digital identity designed to help parents discover the school, understand its approach and connect with the institution easily.</p><p>The website can showcase the school’s profile, academic information, facilities, achievements, events, gallery and admission enquiries in one accessible place.</p><a class="btn btn-primary" href="#contact">Talk to the School →</a></div>
+      </div>
+    </section>
+
+    <section id="academics">
+      <div class="container">
+        <div class="section-head"><div class="eyebrow">ACADEMICS</div><h2>Learning for a changing world.</h2><p>A flexible section for the school to present its curriculum, learning practices and student development programmes.</p></div>
+        <div class="cards">
+          <article class="card"><div class="icon">📚</div><h3>Strong Academics</h3><p>Present curriculum, subjects, learning goals and academic highlights clearly for parents.</p></article>
+          <article class="card"><div class="icon">💡</div><h3>Experiential Learning</h3><p>Highlight projects, activities, competitions and opportunities that develop curiosity and creativity.</p></article>
+          <article class="card"><div class="icon">🌱</div><h3>Holistic Development</h3><p>Showcase sports, arts, communication, leadership and values-based learning.</p></article>
+        </div>
+      </div>
+    </section>
+
+    <section id="facilities" class="why">
+      <div class="container">
+        <div class="section-head"><div class="eyebrow">OUR CAMPUS</div><h2>Everything parents want to discover.</h2><p>Use this area to showcase the school’s actual facilities and campus strengths.</p></div>
+        <div class="why-grid">
+          <div class="why-item"><div class="icon" style="margin:auto">🏫</div><b>Smart Classrooms</b><span>Modern learning spaces</span></div>
+          <div class="why-item"><div class="icon" style="margin:auto">🔬</div><b>Science & Labs</b><span>Learning by doing</span></div>
+          <div class="why-item"><div class="icon" style="margin:auto">📖</div><b>Library</b><span>Knowledge & discovery</span></div>
+          <div class="why-item"><div class="icon" style="margin:auto">⚽</div><b>Sports & Activities</b><span>Active, confident learners</span></div>
+        </div>
+      </div>
+    </section>
+
+    <section id="gallery">
+      <div class="container">
+        <div class="section-head"><div class="eyebrow">GALLERY</div><h2>Moments that tell our story.</h2><p>Replace these demo cards with the school’s real campus, events, classroom and student photographs.</p></div>
+        <div class="cards">
+          <article class="card"><div class="icon">📸</div><h3>Campus Life</h3><p>Share the school environment and memorable moments.</p></article>
+          <article class="card"><div class="icon">🏆</div><h3>Achievements</h3><p>Celebrate academic, cultural and sports achievements.</p></article>
+          <article class="card"><div class="icon">🎉</div><h3>Events</h3><p>Publish annual functions, celebrations and activities.</p></article>
+        </div>
+      </div>
+    </section>
+
+    <section class="cta">
+      <div class="container"><div><h2>Ready to begin the next chapter?</h2><p>Connect with Holy Vision Global School, Babuan for admission enquiries and school information.</p></div><a class="btn btn-light" href="#contact">Send an Enquiry →</a></div>
+    </section>
+
+    <section id="contact">
+      <div class="container">
+        <div class="section-head"><div class="eyebrow">CONTACT</div><h2>We would love to hear from you.</h2><p>School contact details can be added here before the website goes live.</p></div>
+        <div class="contact-grid">
+          <div class="contact-card"><h3>Holy Vision Global School</h3><p style="color:#666;margin-top:10px">Babuan</p><p style="color:#666;margin-top:6px">📍 School address • 📞 School phone • ✉️ School email</p><p style="color:#666;margin-top:16px">For the final version, the school’s verified contact details, logo, photos and social links can be added.</p></div>
+          <div class="contact-card">
+            <form onsubmit="event.preventDefault(); alert('Thank you! This is a demo enquiry form. The final website can connect it to the school email/WhatsApp.');">
+              <input required placeholder="Parent / Student Name">
+              <input required type="tel" placeholder="Mobile Number">
+              <input type="text" placeholder="Class / Grade">
+              <textarea placeholder="Your enquiry"></textarea>
+              <button class="btn btn-primary" type="submit">Submit Enquiry →</button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer><div class="container"><div><strong>HOLY VISION GLOBAL SCHOOL — BABUAN</strong><br><small>Nurturing Minds. Building Futures.</small></div><small>Website concept developed by <span class="softx">SoftX Solutions</span> • Smart Solutions for digital tomorrow!</small></div></footer>
+</body>
+</html>
